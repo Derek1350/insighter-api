@@ -4,13 +4,13 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import { Webhook } from 'svix';
 import bodyParser from 'body-parser';
-import User from './userModel.js';
+import User from './models/userModels.js';
 
 dotenv.config();
 
 // Connect mongoose to database
 mongoose
-    .connect(process.env.MONGODB_URI)
+    .connect("mongodb+srv://Admin-Tanzeel:Test123@cluster0.uw3gnpd.mongodb.net/insighter")
     .then(() => {
         console.log('Connected to DB');
     })
