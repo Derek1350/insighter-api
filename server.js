@@ -1,69 +1,69 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import cors from 'cors';
 import { Webhook } from 'svix';
 import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 import User from './models/userModels.js';
 
 dotenv.config();
 
-// Connect mongoose to database
 mongoose
-    .connect("mongodb+srv://Admin-Tanzeel:Test123@cluster0.uw3gnpd.mongodb.net/insighter")
-    .then(() => {
-        console.log('Connected to DB');
-    })
-    .catch((err) => console.log(err.message));
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log('Connected to DB');
+  })
+  .catch((err) => console.log(err.message));
 
 const app = express();
 
-app.use(cors());
-
-// Real code
 app.post(
-    '/api/webhook',
-    bodyParser.raw({ type: 'application/json' }),
-    async function (req, res) {
-        try {
-            const payloadString = req.body.toString();
-            const svixHeaders = req.headers;
+  '/api/webhooks',
+  bodyParser.raw({ type: 'application/json' }),
+  async function (req, res) {
+    try {
+      const payloadString = req.body.toString();
+      const svixHeaders = req.headers;
 
-            const wh = new Webhook("whsec_N9n/WlKZ/flgBwTRxUl4dt8NtTwOngAS");
-            const evt = wh.verify(payloadString, svixHeaders);
-            const { id, ...attributes } = evt.data;
-            // Handle the webhooks
-            const eventType = evt.type;
-            if (eventType === 'user.created') {
-                console.log(`User ${id} was ${eventType}`);
+      const wh = new Webhook(process.env.CLERK_WEBHOOK_SECRET_KEY);
+      const evt = wh.verify(payloadString, svixHeaders);
 
-                const firstName = attributes.first_name;
-                const lastName = attributes.last_name;
+      const { id, ...attributes } = evt.data;
 
-                const user = new User({
-                    clerkUserId: id,
-                    firstName: firstName,
-                    lastName: lastName,
-                });
+      const eventType = evt.type;
 
-                await user.save();
-                console.log('User saved to database');
-            }
-            res.status(200).json({
-                success: true,
-                message: 'Webhook received',
-            });
-        } catch (err) {
-            res.status(400).json({
-                success: false,
-                message: err.message,
-            });
-        }
+      if (eventType === 'user.created') {
+        const firstName = attributes.first_name;
+        const lastName = attributes.last_name;
+
+        console.log(firstName);
+
+        const user = new User({
+          clerkUserId: id,
+          firstName: firstName,
+          lastName: lastName,
+        });
+
+        await user.save();
+        console.log('User is created');
+        // console.log(`User ${id} is ${eventType}`);
+        // console.log(attributes);
+      }
+
+      res.status(200).json({
+        success: true,
+        message: 'Webhook received',
+      });
+    } catch (err) {
+      res.status(400).json({
+        success: false,
+        message: err.message,
+      });
     }
+  }
 );
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 7000;
 
 app.listen(port, () => {
-    console.log(`Listening on port http://localhost:${port}`);
+  console.log(`listening on port ${port}`);
 });
