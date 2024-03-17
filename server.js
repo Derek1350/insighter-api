@@ -29,7 +29,7 @@ app.post(
             const payloadString = req.body.toString();
             const svixHeaders = req.headers;
 
-            const wh = new Webhook(process.env.CLERK_WEBHOOK_SECRET_KEY);
+            const wh = new Webhook("whsec_N9n/WlKZ/flgBwTRxUl4dt8NtTwOngAS");
             const evt = wh.verify(payloadString, svixHeaders);
             const { id, ...attributes } = evt.data;
             // Handle the webhooks
