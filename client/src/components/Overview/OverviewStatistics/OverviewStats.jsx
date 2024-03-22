@@ -55,8 +55,8 @@ const OverviewStats = () => {
                 <img src={`/assets/social-icons/${selectedPlatform}.svg`} alt="" style={{marginLeft: "30px"}} height={20} width={20}/>
                 <select className="overview-time-select" value={selectedPlatform} onChange={handlePlatformChange} style={{cursor: "pointer"}}>
                     <option style={{background: "black"}} value="facebook">Facebook</option>
-                    <option style={{background: "black"}} value="x">X</option>
                     <option style={{background: "black"}} value="instagram">Instagram</option>
+                    <option style={{background: "black"}} value="x">X</option>
                     <option style={{background: "black"}} value="youtube">YouTube</option>
                 </select>
             </div>

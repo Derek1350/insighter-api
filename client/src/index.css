@@ -25,3 +25,19 @@ body{
 .no-scroll {
   overflow: hidden;
 }
+.global-container{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: #0f121a;
+  font-weight: normal;
+  /* padding: 10px 60px; */
+}
+.glass{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}

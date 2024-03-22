@@ -93,9 +93,11 @@ const MobileNav = (props) => {
                             </ul>
                         </SignedIn>
                         <SignedOut>
-                            <button className="login-btn-mobile">
-                                <Link to="/sign-in">Login</Link>
-                            </button>
+                            <Link to="/sign-in">
+                                <button className="login-btn-mobile">
+                                    Login
+                                </button>
+                            </Link>
                         </SignedOut>
                     </section>
                 </div>

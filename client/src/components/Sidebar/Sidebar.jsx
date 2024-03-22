@@ -70,9 +70,11 @@ const Sidebar = () => {
           </SignedIn>
 
           <SignedOut>
-            <button className="login-btn">
-              <Link to="/sign-in">Login</Link>
-            </button>
+            <Link to="/sign-in">
+              <button className="login-btn">
+                Login
+              </button>
+            </Link>
           </SignedOut>
         </nav>
       </div>

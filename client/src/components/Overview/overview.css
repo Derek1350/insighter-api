@@ -4,6 +4,8 @@
     flex-direction: column;
     background: linear-gradient(to right, #141e30, #243b55);
     font-weight: normal;
+}
+.overview-content{
     padding: 10px 60px;
 }
 .overview-header-container{
@@ -59,8 +61,12 @@
 }
 
 @media screen and (max-width: 1025px) {
+    .overview-content{
+        padding: 0;
+    }
     .overview-header-content{
         display: none;
+        z-index: 99;
     }
     .mobile-nav{
         display: block;
