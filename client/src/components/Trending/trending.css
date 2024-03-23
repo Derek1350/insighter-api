@@ -1,5 +1,6 @@
 .trending-content-container{
     padding: 9px 60px;
+    background: linear-gradient(to right, #141e30, #243b55);
 }
 
 .trending-cards-container{
@@ -18,9 +19,6 @@
 }
 
 @media screen and (max-width: 1200px){
-    .trending-content{
-        width: 82%
-    }
     .trending-content{
         justify-content: space-between;
     }

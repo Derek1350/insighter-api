@@ -8,6 +8,7 @@ import { FaRegCommentDots } from "react-icons/fa";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import InstaTrending from './InstaTrending/InstaTrending'
 import "./trending.css"
+import YouTubeTrending from './YouTubeTrending/YouTubeTrending'
 
 
 const Trending = () => {
@@ -33,7 +34,7 @@ const Trending = () => {
 
   return (
     <section className='trending-container global-container'>
-      <div className={`trending-content-container ${screenWidth < 1025 ? '' : 'glass'}`}>
+      <div className={"trending-content-container"}>
         <header className='overview-header-container'>
           <div className='overview-header'>
             <div className='overview-header-content'>
@@ -69,14 +70,7 @@ const Trending = () => {
         </header>
         <section className='trending-cards-container'>
           <div className='trending-content'>
-            <InstaTrending />
-            <InstaTrending />
-            <InstaTrending />
-            <InstaTrending />
-            <InstaTrending />
-            <InstaTrending />
-            <InstaTrending />
-            <InstaTrending />
+            <YouTubeTrending />
           </div>
         </section>
       </div>
