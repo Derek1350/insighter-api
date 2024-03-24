@@ -8,6 +8,8 @@ const YouTubeTrending = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [category, setCategory] = useState('0');
 
+  const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
+
   useEffect(() => {
     const fetchTrendingVideos = async () => {
       try {
@@ -19,7 +21,7 @@ const YouTubeTrending = () => {
               chart: 'mostPopular',
               regionCode: 'IN',
               maxResults: 15,
-              key: 'AIzaSyDXYy_71EbmFkf5sxor-mYQ0C3gGxc2O_A',
+              key: apiKey,
               videoCategoryId: category,
             },
           }
@@ -38,26 +40,24 @@ const YouTubeTrending = () => {
   };
 
   return (
-    <div>
+    <div className='trending-youtube-container'>
       {/* <h1>Trending YouTube Videos</h1> */}
-      {/* <div>
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="0">All</option>
-          <option value="10">Music</option>
-          <option value="20">Gaming</option>
-        </select>
-      </div> */}
-      <div>
-        <span>All</span>
-        <span>Music</span>
-        <span>Gaming</span>
+      <div className='trending-youtube-headline-container'>
+        <h1>Get the trending videos on YouTube</h1>
+        <div className='glass trending-youtube-category-container'>
+          <img src={`/assets/youtube-category-icons/trending-${category}.png`} style={{marginTop: "2px"}} alt="" width={24} height={24}/>
+          <select value={category} onChange={(e) => setCategory(e.target.value)}>
+            <option value="0">All</option>
+            <option value="10">Music</option>
+            <option value="20">Gaming</option>
+          </select>
+        </div>
       </div>
-      <div></div>
       <hr />
-      <div className="trending-yt-videos" style={{}}>
+      <div className="trending-yt-videos">
         {trendingVideos.map((video) => (
           <div key={video.id} className="" style={{background: "linear-gradient(to right, #141e30, #0f121a)", borderRadius: "20px"}}>
-            <div className='trending-yt-video glass' style={{}}>
+            <div className='trending-yt-video glass'>
                 <YouTube videoId={video.id} opts={{}} />
                 <div>
                     <h2 style={{margin: "0"}}>{video.snippet.title}</h2>
