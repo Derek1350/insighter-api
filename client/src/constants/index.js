@@ -13,7 +13,7 @@ export const navLinks = [
     },
     {
       label: "Trending",
-      route: "/trending/instagram",
+      route: "/trending",
       icon: "/assets/icons/trending.svg",
       active: "/assets/active-icons/active-trending.svg"
     },

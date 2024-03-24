@@ -20,6 +20,7 @@
     width: 90px;
     height: 22px;
     margin-top: 2px;
+    cursor: pointer;
 }
 .trending-youtube-headline-container option{
     background-color: black;
@@ -37,9 +38,9 @@
     padding: 20px;
     align-items: start;
 }
-.trending-yt-video iframe{
-    width: 500px;
-    height: 280px;
+.trending-yt-video iframe, .video-dummy{
+    width: 500px !important;
+    height: 280px !important;
 }
 
 @media screen and (max-width: 1450px) {
@@ -52,9 +53,9 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .trending-yt-video iframe{
-        width: 400px;
-        height: 250px;
+    .trending-yt-video iframe, .video-dummy{
+        width: 400px !important; 
+        height: 250px !important;
     }
     .trending-yt-video h2{
         font-size: 20px;
@@ -65,9 +66,9 @@
 }
 
 @media screen and (max-width: 800px) {
-    .trending-yt-video iframe{
-        width: 80vw;
-        height: 40vh;
+    .trending-yt-video iframe, .video-dummy{
+        width: 80vw !important;
+        height: 40vh !important;
     }
     .trending-yt-video{
         flex-direction: column;
@@ -86,9 +87,9 @@
     .trending-youtube-container hr{
         width: 95%;
     }
-    .trending-yt-video iframe{
-        width: 80vw;
-        height: 30vh;
+    .trending-yt-video iframe, .video-dummy{
+        width: 80vw !important;
+        height: 30vh !important;
     }
     .trending-yt-video{
         flex-direction: column;

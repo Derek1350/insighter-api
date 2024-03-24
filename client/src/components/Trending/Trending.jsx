@@ -9,28 +9,23 @@ import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import InstaTrending from './InstaTrending/InstaTrending'
 import "./trending.css"
 import YouTubeTrending from './YouTubeTrending/YouTubeTrending'
+import XTrending from './XTrending/XTrending'
 
 
 const Trending = () => {
-  const [selectedPlatform, setSelectedPlatform] = useState('Facebook');
-
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [selectedPlatform, setSelectedPlatform] = useState('facebook');
 
   const handlePlatformChange = (e) => {
     setSelectedPlatform(e.target.value);
   };
 
-  useEffect(() => {
-    const updateScreenWidth = () => {
-      setScreenWidth(window.innerWidth);
-    };
+  const platformComponents = {
+    facebook: <InstaTrending />,
+    instagram: <InstaTrending />,
+    x: <XTrending /> , // Define component for platform X
+    youtube: <YouTubeTrending />,
+  };
 
-    window.addEventListener('resize', updateScreenWidth);
-
-    return () => {
-      window.removeEventListener('resize', updateScreenWidth);
-    };
-  }, []);
 
   return (
     <section className='trending-container global-container'>
@@ -52,7 +47,6 @@ const Trending = () => {
               </div>
               <span>Take a closer look at how your social media accounts are performing</span>
             </div>
-
             {/* Mobile Nav */}
             <div className='mobile-nav'>
               <Link to='/'>
@@ -70,7 +64,7 @@ const Trending = () => {
         </header>
         <section className='trending-cards-container'>
           <div className='trending-content'>
-            <YouTubeTrending />
+            {platformComponents[selectedPlatform]}
           </div>
         </section>
       </div>
