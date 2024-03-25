@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Overview from "./components/Overview/Overview";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Trending from "./components/Trending/Trending";
+import Scheduler from "./components/Scheduler/Scheduler";
 
 if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
@@ -27,7 +28,7 @@ const ClerkWithRoutes = () => {
     >
       <Routes>
         <Route path="/" element={<><Sidebar /><Overview /> </>} />
-        <Route path="/schedule" element={<><Sidebar /></>} />
+        <Route path="/schedule" element={<><Sidebar /><Scheduler/></>} />
         <Route path="/trending" element={<><Sidebar /><Trending /></>} />
         <Route
           path="/sign-in/*"
