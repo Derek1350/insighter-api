@@ -1,26 +1,46 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import React from 'react'
+import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
 
-function XTrending() {
-  const [error, setError] = useState(null);
 
-  const handleLogin = async () => {
-    try {
-      const response = await axios.get('http://localhost:5000/auth/linkedin');
-      window.location = response.data.redirectUrl;
-    } catch (error) {
-      console.error('Error logging in:', error);
-      setError('Failed to connect to the server. Please try again later.');
-    }
-  };
-
-  return (
-    <div>
-      <h1>LinkedIn Analytics Tool</h1>
-      <button onClick={handleLogin}>Login with LinkedIn</button>
-      {error && <p>{error}</p>}
-    </div>
-  );
+const XTrending = () => {
+    return (
+        <>
+            <div>XTrendingz</div>
+            <TwitterTimelineEmbed
+                sourceType="profile"
+                screenName="ChittanshuSingh"
+                options={{ height: 400 }}
+            />
+            <TwitterTweetEmbed
+                tweetId={'933354946111705097'}
+            />
+            <TwitterShareButton
+                url={'https://facebook.com/ChittanshuSingh'}
+                options={{ text: '#reactjs is awesome', via: 'ChittanshuSingh' }}
+            />
+            <TwitterMentionButton
+                screenName={'ChittanshuSingh'}
+            />
+            <TwitterHashtagButton
+                tag={'cybersecurity'}
+            />
+            <TwitterFollowButton
+                screenName={'ChittanshuSingh'}
+            />
+            <TwitterMomentShare
+                momentId={'650667182356082688'}
+            />
+            <TwitterDMButton
+                id={1364031673}
+            />
+            <TwitterVideoEmbed
+                id={'560070183650213889'}
+            />
+            <TwitterOnAirButton
+                id={'560070183650213889'}
+            />
+        </>
+    )
 }
 
-export default XTrending;
+export default XTrending
