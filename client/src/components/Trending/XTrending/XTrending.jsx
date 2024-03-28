@@ -1,31 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import twitterClient from './twitterClient.js';
+import React, { useState } from 'react';
+import axios from 'axios';
 
 function XTrending() {
-  const [trends, setTrends] = useState([]);
+  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    async function fetchTrendingTopics() {
-      try {
-        const response = await twitterClient.get('trends/place', { id: 1 }); // Use WOEID for your region
-        setTrends(response[0].trends);
-      } catch (error) {
-        console.error('Error fetching trending topics:', error);
-      }
+  const handleLogin = async () => {
+    try {
+      const response = await axios.get('http://localhost:5000/auth/linkedin');
+      window.location = response.data.redirectUrl;
+    } catch (error) {
+      console.error('Error logging in:', error);
+      setError('Failed to connect to the server. Please try again later.');
     }
-    fetchTrendingTopics();
-  }, []);
+  };
 
   return (
     <div>
-      <h2>Trending Topics</h2>
-      <ul>
-        {trends.map((trend) => (
-          <li key={trend.name}>{trend.name}</li>
-        ))}
-      </ul>
+      <h1>LinkedIn Analytics Tool</h1>
+      <button onClick={handleLogin}>Login with LinkedIn</button>
+      {error && <p>{error}</p>}
     </div>
   );
 }
 
-export default XTrending
+export default XTrending;
