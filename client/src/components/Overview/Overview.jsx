@@ -9,7 +9,7 @@ const Overview = () => {
 
   const conatiner = document.querySelector('.overview-container');
   return (
-    <section className='overview-container'>
+    <section className='overview-container global-container'>
       <div className='overview-content' style={{}}>
         <header className='overview-header-container'>
           <div className='overview-header'>

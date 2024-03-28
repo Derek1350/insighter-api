@@ -21,8 +21,8 @@ const Trending = () => {
 
   const platformComponents = {
     facebook: <InstaTrending />,
-    instagram: <InstaTrending />,
-    x: <XTrending /> , // Define component for platform X
+    instagram: (<InstaTrending />),
+    x: <XTrending /> ,
     youtube: <YouTubeTrending />,
   };
 
@@ -62,6 +62,19 @@ const Trending = () => {
             </div>
           </div>
         </header>
+        <div className='trending-mobile-dropdown-container' style={{}}>
+          <span>Select the Platform: </span>
+          <div className='trending-mobile-dropdown glass'>
+            <img src={`/assets/social-icons/${selectedPlatform}.svg`} alt="" style={{marginLeft: "20px"}} height={20} width={20}/>
+            <select className="overview-time-select" value={selectedPlatform} onChange={handlePlatformChange} style={{cursor: "pointer"}}>
+                <option style={{background: "black"}} value="facebook">Facebook</option>
+                <option style={{background: "black"}} value="instagram">Instagram</option>
+                <option style={{background: "black"}} value="x">X</option>
+                <option style={{background: "black"}} value="youtube">YouTube</option>
+            </select>
+          </div>
+        </div>
+        <hr />
         <section className='trending-cards-container'>
           <div className='trending-content'>
             {platformComponents[selectedPlatform]}

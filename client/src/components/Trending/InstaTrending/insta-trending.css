@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 0.7rem;
     padding: 20px;
-    width: 20%;
+    width: 25%;
 }
 
 .card-image-container{
@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 1450px){
     .insta-card{
-        width: 25%;
+        width: 30%;
     }
 }
 

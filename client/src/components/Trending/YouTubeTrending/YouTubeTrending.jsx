@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import YouTube from 'react-youtube';
 import './youtube-trending.css';
-import { Route } from 'react-router-dom';
 
 const YouTubeTrending = () => {
   const [trendingVideos, setTrendingVideos] = useState([]);

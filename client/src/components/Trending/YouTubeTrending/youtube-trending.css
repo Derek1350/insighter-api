@@ -85,7 +85,7 @@
         padding-bottom: 15px;
     }
     .trending-youtube-container hr{
-        width: 95%;
+        display: none;
     }
     .trending-yt-video iframe, .video-dummy{
         width: 80vw !important;

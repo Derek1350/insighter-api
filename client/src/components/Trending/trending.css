@@ -14,10 +14,15 @@
     display: flex;
     gap: 2rem;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%
 }
-
+.trending-mobile-dropdown-container{
+    display: none;
+}
+.trending-content-container hr{
+    display: none;
+}
 @media screen and (max-width: 1200px){
     .trending-content{
         justify-content: space-between;
@@ -31,10 +36,47 @@
     .trending-content-container{
         padding: 0;
     }
+    .trending-content-container hr{
+        width: 95%;
+    }
+    .trending-mobile-dropdown-container{
+        display: flex;
+        align-items: center;
+        gap: 9.5rem;
+        margin: 30px;
+    }
+    .trending-mobile-dropdown-container span{
+        font-size: 30px;
+    }
+    .trending-mobile-dropdown{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 1rem;
+        padding: 5px 13px;
+    }
+    .trending-mobile-dropdown img{
+        margin: 0;
+    }
 }
 
 @media screen and (max-width: 710px) {
     .trending-content{
         justify-content: center;
+    }
+    .trending-mobile-dropdown-container span{
+        font-size: 25px;
+    }
+    .trending-mobile-dropdown-container{
+        justify-content: space-between;
+        gap: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .trending-mobile-dropdown-container{
+        flex-direction: column;
+        gap: 2rem;
+        align-items: start;
     }
 }
