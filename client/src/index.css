@@ -17,6 +17,11 @@ body{
   flex-flow: row-reverse;
   gap: 12px;
 }
+.cl-internal-phfxlr {
+  margin: auto;  
+  position: relative;
+  transform: translateY(30%);
+}
 
 .cl-userButtonOuterIdentifier {
   font-family: "Nunito", sans-serif;
