@@ -24,7 +24,7 @@ const OverviewSocial = () => {
                 <div className='overview-social'>
                     <img src="/assets/social-icons/x.svg" alt="" width={20} height={20}/>
                     <span className='overview-social-name'>
-                        <span>Phoenix</span>
+                        <span>Derek</span>
                         <span className="overview-social-platform">X</span>
                     </span>
                 </div>
@@ -40,7 +40,7 @@ const OverviewSocial = () => {
                 <div className='overview-social'>
                     <img src="/assets/social-icons/instagram.svg" alt="" width={24} height={24}/>
                     <span className='overview-social-name'>
-                        <span>Phoenix</span>
+                        <span>Athron</span>
                         <span className="overview-social-platform">Instagram</span>
                     </span>
                 </div>
@@ -56,7 +56,7 @@ const OverviewSocial = () => {
                 <div className='overview-social'>
                     <img src="/assets/social-icons/youtube.svg" alt="" width={20} height={20}/>
                     <span className='overview-social-name'>
-                        <span>Phoenix</span>
+                        <span>Advance_Play</span>
                         <span className="overview-social-platform">YouTube</span>
                     </span>
                 </div>
