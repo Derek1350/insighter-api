@@ -59,9 +59,11 @@ const Sidebar = () => {
                   </li>
                 )
               })}
-              <button className="sidebar-help-button">
-                Need help?
-              </button>
+              <Link to="/need-help">
+                <button className="sidebar-help-button">
+                  Need help?
+                </button>
+              </Link>
                 {/* <li className="sidebar-user-button" >
                     <UserButton afterSignOutUrl='/' />
                 </li> */}

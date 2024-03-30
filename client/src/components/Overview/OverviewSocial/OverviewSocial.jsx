@@ -13,8 +13,9 @@ const OverviewSocial = () => {
                     </span>
                 </div>
                 <div className="overview-social-count">
-                    <span className="overview-followers-count">192.8K</span>
-                    <span className="overview-followers-text">FOLLOWERS</span>
+                    {/* <span className="overview-followers-count">192.8K</span>
+                    <span className="overview-followers-text">FOLLOWERS</span> */}
+                    <button style={{border: "none", outline: "none", background: "linear-gradient(to right, #06a9f4, #5239d8)", color:"#fff", borderRadius:"25px", padding:"10px", width: "8rem", width: "8rem"}}>Connect</button>
                 </div>
             </div>
 
@@ -29,8 +30,9 @@ const OverviewSocial = () => {
                     </span>
                 </div>
                 <div className="overview-social-count">
-                    <span className="overview-followers-count">240.6K</span>
-                    <span className="overview-followers-text">FOLLOWERS</span>
+                    {/* <span className="overview-followers-count">240.6K</span>
+                    <span className="overview-followers-text">FOLLOWERS</span> */}
+                    <button style={{border: "none", outline: "none", background: "linear-gradient(to right, #06a9f4, #5239d8)", color:"#fff", borderRadius:"25px", padding:"10px", width: "8rem"}}>Connect</button>
                 </div>
             </div>
 
@@ -45,8 +47,9 @@ const OverviewSocial = () => {
                     </span>
                 </div>
                 <div className="overview-social-count">
-                    <span className="overview-followers-count">586.4K</span>
-                    <span className="overview-followers-text">FOLLOWERS</span>
+                    {/* <span className="overview-followers-count">586.4K</span>
+                    <span className="overview-followers-text">FOLLOWERS</span> */}
+                    <button style={{border: "none", outline: "none", background: "linear-gradient(to right, #06a9f4, #5239d8)", color:"#fff", borderRadius:"25px", padding:"10px", width: "8rem"}}>Connect</button>
                 </div>
             </div>
 
@@ -61,8 +64,9 @@ const OverviewSocial = () => {
                     </span>
                 </div>
                 <div className="overview-social-count">
-                    <span className="overview-followers-count">928.3K</span>
-                    <span className="overview-followers-text">SUBSCRIBERS</span>
+                    {/* <span className="overview-followers-count">928.3K</span>
+                    <span className="overview-followers-text">SUBSCRIBERS</span> */}
+                    <button style={{border: "none", outline: "none", background: "linear-gradient(to right, #06a9f4, #5239d8)", color:"#fff", borderRadius:"25px", padding:"10px", width: "8rem"}}>Connect</button>
                 </div>
             </div>
         </div>

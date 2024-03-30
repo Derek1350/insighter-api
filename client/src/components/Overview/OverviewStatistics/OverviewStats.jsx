@@ -23,20 +23,20 @@ const OverviewStats = () => {
             <div className="overview-statistics-info-section">
                 <div className="overview-statistics-info-block">
                     <span className="overview-statistics-info-label">Engaged Audiences <span style={{color: "#bdbdbd"}}>(Last 2 Weeks)</span></span>
-                    <span className="overview-statistics-info-value">19,872</span>
+                    <span className="overview-statistics-info-value">-----</span>
                     <div className="overview-statistics-info-change">
                         <img src="/assets/icons/increase.svg" alt="inc" width={15} height={15} style={{marginRight: "3px"}} />
-                        <span className="overview-statistics-info-percent" style={{color: "#30ab38"}}>3.82%</span>
-                        <span> vs 16,728 prev. 2 weeks</span>
+                        <span className="overview-statistics-info-percent" style={{color: "#30ab38"}}>---%</span>
+                        <span> vs ------ prev. 2 weeks</span>
                     </div>
                 </div>
                 <div className="overview-statistics-info-block">
                     <span className="overview-statistics-info-label">Page Impressions <span style={{color: "#bdbdbd"}}>(Last 2 Weeks)</span></span>
-                    <span className="overview-statistics-info-value">9,728,826</span>
+                    <span className="overview-statistics-info-value">------</span>
                     <div className="overview-statistics-info-change">
                         <img src="/assets/icons/decrease.svg" alt="dec" width={15} height={15} style={{marginRight: "3px"}} />
-                        <span className="overview-statistics-info-percent" style={{color: "#ce3b3b"}}>3.82%</span>
-                        <span> vs 9,672,988 prev. 2 weeks</span>
+                        <span className="overview-statistics-info-percent" style={{color: "#ce3b3b"}}>---%</span>
+                        <span> vs ------ prev. 2 weeks</span>
                     </div>
                 </div>
             </div>

@@ -1,46 +1,22 @@
-import React from 'react'
-import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterHashtagButton, TwitterMentionButton, TwitterTweetEmbed, TwitterMomentShare, TwitterDMButton, TwitterVideoEmbed, TwitterOnAirButton } from 'react-twitter-embed';
-
+import React from 'react';
+import twitterTrends from '../../../constants/twitterTrends.json';
+import { Link } from 'react-router-dom';
 
 const XTrending = () => {
-    return (
-        <>
-            <div>XTrendingz</div>
-            <TwitterTimelineEmbed
-                sourceType="profile"
-                screenName="ChittanshuSingh"
-                options={{ height: 400 }}
-            />
-            <TwitterTweetEmbed
-                tweetId={'933354946111705097'}
-            />
-            <TwitterShareButton
-                url={'https://facebook.com/ChittanshuSingh'}
-                options={{ text: '#reactjs is awesome', via: 'ChittanshuSingh' }}
-            />
-            <TwitterMentionButton
-                screenName={'ChittanshuSingh'}
-            />
-            <TwitterHashtagButton
-                tag={'cybersecurity'}
-            />
-            <TwitterFollowButton
-                screenName={'ChittanshuSingh'}
-            />
-            <TwitterMomentShare
-                momentId={'650667182356082688'}
-            />
-            <TwitterDMButton
-                id={1364031673}
-            />
-            <TwitterVideoEmbed
-                id={'560070183650213889'}
-            />
-            <TwitterOnAirButton
-                id={'560070183650213889'}
-            />
-        </>
-    )
+  return (
+    <>
+      {twitterTrends.trends.map((trend, index) => (
+        <div className='glass' style={{padding: "10px 15px", borderRadius: "30px", fontSize: "15px"}} key={index}>
+            <Link to={trend.url}>
+                <div>
+                    <h3>{trend.name}</h3>
+                    <p>Tweet Volume: {trend.tweet_volume}</p>
+                </div>
+            </Link>
+        </div>
+      ))}
+    </>
+  );
 }
 
-export default XTrending
+export default XTrending;

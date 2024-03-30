@@ -75,9 +75,9 @@
     right: 0;
     top: 0;
     height: 100%;
-    width: 14rem;
+    width: 15rem;
     background-color: #151f31;
-    padding: 2rem;
+    padding: 2rem 1.5rem;
     gap: 2rem;
     z-index: 50;
 }
@@ -157,11 +157,6 @@
     border-radius: 25px;
     cursor: pointer;
     margin-top: 3rem;
-    margin-left: 2rem;
-}
-
-.login-btn-mobile a{
-    text-decoration: none;
     color: #fff;
-    font-size: 1rem;
+    margin-left: 1.3rem;
 }
