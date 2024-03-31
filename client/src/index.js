@@ -8,6 +8,8 @@ import Overview from "./components/Overview/Overview";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Trending from "./components/Trending/Trending";
 import Scheduler from "./components/Scheduler/Scheduler";
+import HelpD from "./components/HelpDesk/HelpD/HelpD";
+import Popup from "./components/Scheduler/popup/popup";
 
 if (!process.env.REACT_APP_CLERK_PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
@@ -30,6 +32,8 @@ const ClerkWithRoutes = () => {
         <Route path="/" element={<><Sidebar /><Overview /> </>} />
         <Route path="/schedule" element={<><Sidebar /><Scheduler/></>} />
         <Route path="/trending" element={<><Sidebar /><Trending /></>} />
+        <Route path="/need-help" element={<><Sidebar /><HelpD /></>} />
+        <Route path="/popup" element={<><Sidebar /><Popup /></>} />
         <Route
           path="/sign-in/*"
           element={<SignIn redirectUrl={'/'} routing="path" path="/sign-in" />}

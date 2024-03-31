@@ -1,6 +1,7 @@
 .trending-content-container{
     padding: 9px 60px;
     background: linear-gradient(to right, #141e30, #243b55);
+    height: 100%;
 }
 
 .trending-cards-container{
@@ -15,7 +16,7 @@
     gap: 2rem;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 100%
+    width: 100%;
 }
 .trending-mobile-dropdown-container{
     display: none;
